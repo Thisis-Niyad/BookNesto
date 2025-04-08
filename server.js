@@ -29,6 +29,6 @@ db.once('open', () => console.log('connected to mongoose'))
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
-app.use('/Books', BookRouter)
+app.use('/books', BookRouter)
 
 app.listen(process.env.PORT || 3000)
