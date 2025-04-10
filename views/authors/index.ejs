@@ -5,8 +5,12 @@
     <button type="submit">Search</button>
 </form>
 <br>
-<% authors.forEach(element=> { %>
+<% authors.forEach(author=> { %>
     <div>
-        <%= element.name %>
+        <%= author.name %>
     </div>
-    <% }); %>
+    <a href="/authors/<%= author.id %>">view</a>
+    <a href="/authors/<%= author.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm' , {url:`/authors/${author.id }`}) %>
+
+        <% }); %>
