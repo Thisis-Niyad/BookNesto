@@ -8,7 +8,9 @@
         <h2>Books By Author</h2>
         <div>
             <% booksByAuthor.forEach(book=> { %>
-                <img src="<%= book.coverImagePath %>" height="150" width="100">
+                <a href="/books/<%= book.id %>">
+                    <img src="<%= book.coverImagePath %>" height="150" width="100">
+                </a>
                 <% }); %>
         </div>
         <% } else { %>
