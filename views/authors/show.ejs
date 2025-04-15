@@ -1,7 +1,7 @@
 <h2>
     <%= author.name %>
 </h2>
-<a href="/authors/<%= author.id %>/edit">Edit</a>
+<a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
 <%- include('../partials/deleteForm',{url:`/authors/${author.id}`}) %>
 
     <% if (booksByAuthor.length>0) { %>
@@ -11,6 +11,9 @@
                 <a href="/books/<%= book.id %>">
                     <img src="<%= book.coverImagePath %>" height="150" width="100">
                 </a>
+                <div>
+                    rating:★/<%= Math.round(book.rating*10)/10 %>
+                </div>
                 <% }); %>
         </div>
         <% } else { %>

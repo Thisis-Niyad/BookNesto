@@ -1,6 +1,21 @@
 <h2>Edit Author</h2>
 <form action="/authors/<%= author.id %>?_method=PUT" method="post">
     <%- include('_form_fields') %>
-        <a href="/authors/<%= author.id %>">Cancel</a>
-        <button type="submit">Update</button>
+        <a href="/authors/<%= author.id %>" class="cancel-btn">Cancel</a>
+        <button class="sub-btn" type="submit">Update</button>
 </form>
+<div>
+    <% bookByAuthor.forEach(book=> { %>
+        <div>
+            <a href="/books/<%= book.id %>">
+                <img src="<%= book.coverImagePath %>" height="150" width="100">
+            </a>
+            <div>
+                rating:★/<%= Math.round(book.rating*10)/10 %>
+            </div>
+
+            <%- include('../partials/deleteForm',{url:`/authors/${book.id}/${author.id}`}) %>
+        </div>
+
+        <% }); %>
+</div>

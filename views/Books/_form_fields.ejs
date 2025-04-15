@@ -24,6 +24,15 @@
     <input type="number" name="pageCount" min="2" value="<%= book.pageCount%>">
 </div>
 <div>
+    <label for="category">category</label>
+    <select name="category">
+        <option value="fantasy">Fantasy</option>
+        <option value="scienceFiction">Science Fiction</option>
+        <option value="thriller">Thriller</option>
+        <option value="other">Other</option>
+    </select>
+</div>
+<div>
     <label>Cover</label>
     <input type="file" name="cover" class="filepond">
 </div>

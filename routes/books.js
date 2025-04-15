@@ -47,12 +47,15 @@ router.post('/', async (req, res) => {
         publishDate: new Date(req.body.publishDate),
         pageCount: req.body.pageCount,
         description: req.body.description,
+        category: req.body.category
     })
     saveCover(book, req.body.cover);
     try {
         const newBook = await book.save()
         res.redirect(`books/${newBook.id}`)
     } catch (error) {
+        console.log(error);
+
         renderNewPage(res, book, true)
 
     }
@@ -60,13 +63,32 @@ router.post('/', async (req, res) => {
 
 //show book route
 router.get('/:id', async (req, res) => {
+
     try {
         const book = await Book.findById(req.params.id).populate('author').exec();
         res.render('Books/show', { book: book })
     } catch (error) {
         console.log(error);
-
         res.redirect('/')
+    }
+})
+
+//rating book
+router.post('/rate-book/:id', async (req, res) => {
+    let book;
+    let result;
+    try {
+        book = await Book.findById(req.params.id);
+        result = book.rating * book.noofRates;
+        result += Number(req.body.rating);
+        book.noofRates += 1;
+        result /= book.noofRates;
+        book.rating = result;
+        await book.save();
+        res.redirect(`/books/${req.params.id}`);
+    } catch (error) {
+        console.error(error);
+        res.redirect('/');
     }
 })
 
@@ -158,13 +180,19 @@ async function renderFormPage(res, book, form, hasError = false) {
     }
 }
 
-function saveCover(book, coverEncoded) {
-    if (coverEncoded == null) return;
-    const cover = JSON.parse(coverEncoded);
-    if (cover != null && imageMimeTypes.includes(cover.type)) {
-        book.coverImage = new Buffer.from(cover.data, 'base64');
-        book.coverImageType = cover.type
-    }
 
+function saveCover(book, coverEncoded) {
+    if (!coverEncoded) return;
+
+    try {
+        const cover = JSON.parse(coverEncoded);
+        if (cover && imageMimeTypes.includes(cover.type)) {
+            book.coverImage = Buffer.from(cover.data, 'base64');
+            book.coverImageType = cover.type;
+        }
+    } catch (err) {
+        console.error('Invalid JSON in coverEncoded:', err.message);
+    }
 }
+
 module.exports = router

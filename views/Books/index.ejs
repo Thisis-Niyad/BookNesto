@@ -1,24 +1,37 @@
 <h2>search Books</h2>
 <form action="/Books" method="get">
-    <div>
-        <label>Title</label>
-        <input type="text" name="title" value="<%= searchOptions.title %>">
+    <div class="search-title">
+        <label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+        </label>
+        <input type="text" class="input-none" name="title" value="<%= searchOptions.title %>" placeholder="Title">
     </div>
-    <div>
-        <label>publish After</label>
-        <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+    <div class="d-flex">
+        <div class="date-input">
+            <label>publish After</label>
+            <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+        </div>
+        <div class="date-input">
+            <label>publish Before</label>
+            <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+        </div>
     </div>
-    <div>
-        <label>publish Before</label>
-        <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
-    </div>
-    <button type="submit">Search</button>
+    <button class="sub-btn" type="submit">Search</button>
 </form>
 <br>
-<div>
+<div class="d-warp">
     <% books.forEach(book=> { %>
-        <a href="/books/<%= book.id %>">
-            <img src="<%= book.coverImagePath %>" height="150" width="100">
-            <% }); %>
-        </a>
+        <div>
+            <a href="/books/<%= book.id %>">
+                <img src="<%= book.coverImagePath %>" class="img-slide">
+            </a>
+            <div>
+                rating:★/<%= Math.round(book.rating*10)/10 %>
+            </div>
+        </div>
+        <% }); %>
 </div>

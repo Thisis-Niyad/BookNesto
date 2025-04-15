@@ -54,12 +54,41 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
     try {
+        const book = await books.find({ author: req.params.id })
         const author = await Author.findById(req.params.id)
-        res.render('authors/edit', { author: author })
-    } catch {
+        res.render('authors/edit',
+            {
+                author: author,
+                bookByAuthor: book
+            })
+    } catch (error) {
+        console.log(error);
+
         res.redirect('/authors')
     }
 })
+
+//deleting book in edit section
+router.delete('/:id/:authorid', async (req, res) => {
+    let book;
+    try {
+        book = await books.findById(req.params.id)
+        await book.deleteOne();
+        res.redirect(`/authors/${req.params.authorid}/edit`);
+    } catch (error) {
+        if (book !== null) {
+            console.log(error);
+
+            res.render('authors/show', {
+                book: book,
+                errorMessage: "could not remove book"
+            })
+        } else {
+            res.redirect('/')
+        }
+    }
+})
+
 
 router.put('/:id', async (req, res) => {
     let author

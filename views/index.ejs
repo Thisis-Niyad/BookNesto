@@ -1,8 +1,83 @@
 <h2>Recently Added</h2>
-<div>
-    <% books.forEach(book=> { %>
-        <a href="/books/<%= book.id %>">
-            <img src="<%= book.coverImagePath %>" height="150" width="100">
-        </a>
-        <% }); %>
+<div class="slider">
+    <div class="slide">
+        <% books.forEach(book=> { %>
+            <div class="item">
+                <a href="/books/<%= book.id %>">
+                    <img src="<%= book.coverImagePath %>" class="img-slide">
+                </a>
+                <div>
+                    rating:★/<%= Math.round(book.rating*10)/10 %>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+</div>
+<h2>Fantasy</h2>
+<div class="slider">
+    <div class="slide">
+        <% books.forEach(book=> { %>
+            <% if (book.category=='fantasy' ) { %>
+                <div class="item">
+                    <a href="/books/<%= book.id %>">
+                        <img src="<%= book.coverImagePath %>" class="img-slide">
+                    </a>
+                    <div>
+                        rating:★/<%= Math.round(book.rating*10)/10 %>
+                    </div>
+                </div>
+                <% } %>
+                    <% }); %>
+    </div>
+</div>
+<h2>Thriller</h2>
+<div class="slider">
+    <div class="slide">
+        <% books.forEach(book=> { %>
+            <% if (book.category=='thriller' ) { %>
+                <div class="item">
+                    <a href="/books/<%= book.id %>">
+                        <img src="<%= book.coverImagePath %>" class="img-slide">
+                    </a>
+                    <div>
+                        rating:★/<%= Math.round(book.rating*10)/10 %>
+                    </div>
+                </div>
+                <% } %>
+                    <% }); %>
+    </div>
+</div>
+<h2>Science Fiction</h2>
+<div class="slider">
+    <div class="slide">
+        <% books.forEach(book=> { %>
+            <% if (book.category=='scienceFiction' ) { %>
+                <div class="item">
+                    <a href="/books/<%= book.id %>">
+                        <img src="<%= book.coverImagePath %>" class="img-slide">
+                    </a>
+                    <div>
+                        rating:★/<%= Math.round(book.rating*10)/10 %>
+                    </div>
+                </div>
+                <% } %>
+                    <% }); %>
+    </div>
+</div>
+<h2>Others</h2>
+<div class="slider">
+    <div class="slide">
+        <% books.forEach(book=> { %>
+            <% if (book.category=='other' ) { %>
+                <div class="item">
+                    <a href="/books/<%= book.id %>">
+                        <img src="<%= book.coverImagePath %>" class="img-slide">
+                    </a>
+                    <div>
+                        rating:★/<%= Math.round(book.rating*10)/10 %>
+                    </div>
+                </div>
+                <% } %>
+                    <% }); %>
+    </div>
 </div>

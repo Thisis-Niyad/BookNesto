@@ -1,6 +1,6 @@
 <h2>Add Books</h2>
 <form action="/books/<%= book.id %>?_method=PUT" method="post">
     <%- include('_form_fields') %>
-        <a href="/Books">Cancel</a>
-        <button type="submit">Upadate</button>
+        <a href="/Books" class="cancel-btn">Cancel</a>
+        <button class="sub-btn" type="submit">Upadate</button>
 </form>

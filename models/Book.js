@@ -33,6 +33,18 @@ const BookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Author'
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    rating: {
+        type: Number,
+        default: 0
+    },
+    noofRates: {
+        type: Number,
+        default: 0
     }
 })
 
