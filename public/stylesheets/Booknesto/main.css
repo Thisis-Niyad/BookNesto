@@ -94,7 +94,7 @@ button {
 
 .slider {
   width: 100%;
-  height: 375px;
+  height: 370px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -121,6 +121,10 @@ h2 {
   margin-bottom: 2px;
 }
 
+.txt-c {
+  text-align: center;
+}
+
 .input-none {
   all: unset;
 }
@@ -134,6 +138,7 @@ h2 {
   align-items: center;
   justify-content: flex-start;
   font-size: 1.5rem;
+  margin: auto;
 }
 .search-title label, .search-title input {
   padding: 5px;
@@ -175,4 +180,101 @@ h2 {
 }
 .d-warp div {
   padding: 10px 20px;
+}
+
+.bookForm {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  box-shadow: 1px 1px 10px 0px #acacac;
+  border-radius: 25px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.txt-field {
+  width: 100%;
+}
+.txt-field div {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 50px;
+}
+.txt-field div input, .txt-field div select {
+  border: 1px solid #606060;
+  border-radius: 20px;
+  font-size: larger;
+  padding: 5px;
+  color: #000000;
+}
+.txt-field div label {
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: large;
+}
+.txt-field div textarea {
+  height: 100px;
+}
+
+.filepond--root {
+  height: 510px !important;
+  width: 350px;
+  margin-bottom: 0;
+}
+
+.filepond--panel-root {
+  background-color: #712cf9;
+  border-radius: 25px;
+}
+
+.filepond--drop-label {
+  color: #fff;
+  cursor: pointer;
+}
+
+.filepond--item-panel {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.filepond--item {
+  height: 360px;
+}
+
+.savebtn-div {
+  text-align: center;
+  padding: 7px;
+  font-size: larger;
+}
+
+.h-addbook, .h-editbook {
+  text-align: center;
+  margin: 5px;
+}
+
+.search-author {
+  padding: 0 5px;
+  border: 1px solid #acacac;
+  border-radius: 20px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  margin: 10px;
+  color: #000;
+}
+.search-author:focus-within {
+  border-color: #000;
+}
+.search-author input {
+  all: unset;
+  padding: 5px;
+  width: 100%;
+}
+.search-author button {
+  width: 26px;
+  height: 26px;
+}
+.search-author button svg {
+  color: #757575;
 }/*# sourceMappingURL=main.css.map */

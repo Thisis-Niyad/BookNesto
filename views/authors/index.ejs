@@ -1,16 +1,29 @@
 <h2>search Authors</h2>
 <form action="/authors" method="get">
-    <label for="">Name</label>
-    <input type="text" name="name" value="<%= searchOptions.name %>">
-    <button class="sub-btn" type="submit">Search</button>
-</form>
-<br>
-<% authors.forEach(author=> { %>
-    <div>
-        <%= author.name %>
+    <div class="search-author">
+        <input type="text" name="name" value="<%= searchOptions.name %>" placeholder="Name">
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+        </button>
     </div>
-    <a href="/authors/<%= author.id %>" class="green-btn">view</a>
-    <a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
-    <%- include('../partials/deleteForm' , {url:`/authors/${author.id }`}) %>
+</form>
+<div class="list-card">
+    <% if (authors==null) { %>
 
-        <% }); %>
+        <% authors.forEach(author=> { %>
+            <div>
+                <%= author.name %>
+            </div>
+            <a href="/authors/<%= author.id %>" class="green-btn">view</a>
+            <a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
+            <%- include('../partials/deleteForm' , {url:`/authors/${author.id }`}) %>
+
+                <% }); %>
+                    <% } else { %>
+                        <div>Not founded</div>
+                        <% } %>
+</div>

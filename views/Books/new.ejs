@@ -1,6 +1,8 @@
-<h2>Add Books</h2>
+<h2 class="h-addbook">Add Books</h2>
 <form action="/Books" method="post">
     <%- include('_form_fields') %>
-        <a href="/Books" class="cancel-btn">Cancel</a>
-        <button class="sub-btn" type="submit">Create</button>
+        <div class="savebtn-div">
+            <a href="/Books" class="cancel-btn">Cancel</a>
+            <button class="sub-btn" type="submit">Create</button>
+        </div>
 </form>
