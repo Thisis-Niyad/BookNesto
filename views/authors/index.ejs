@@ -12,7 +12,7 @@
     </div>
 </form>
 <div class="list-card">
-    <% if (authors==null) { %>
+  
 
         <% authors.forEach(author=> { %>
             <div>
@@ -23,7 +23,5 @@
             <%- include('../partials/deleteForm' , {url:`/authors/${author.id }`}) %>
 
                 <% }); %>
-                    <% } else { %>
-                        <div>Not founded</div>
-                        <% } %>
+                
 </div>
