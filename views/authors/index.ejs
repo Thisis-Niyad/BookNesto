@@ -1,4 +1,4 @@
-<h2>search Authors</h2>
+<h2 class="h-author">Search Authors</h2>
 <form action="/authors" method="get">
     <div class="search-author">
         <input type="text" name="name" value="<%= searchOptions.name %>" placeholder="Name">
@@ -12,16 +12,26 @@
     </div>
 </form>
 <div class="list-card">
-  
+    <ul>
 
         <% authors.forEach(author=> { %>
-            <div>
-                <%= author.name %>
-            </div>
-            <a href="/authors/<%= author.id %>" class="green-btn">view</a>
-            <a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
-            <%- include('../partials/deleteForm' , {url:`/authors/${author.id }`}) %>
+            <li>
+                <div>
+                    <%= author.name %>
+                </div>
+                <div class="author-btns">
+                    <a href="/authors/<%= author.id %>" class="green-btn">view</a>
+                    <a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
+                    <%- include('../partials/deleteForm' , {url:`/authors/${author.id }`}) %>
+                </div>
+            </li>
+            <% }); %>
 
-                <% }); %>
-                
+    </ul>
+
 </div>
+<% if (authors.notfounded) { %>
+    <div class="notfound">
+        <%= authors.notfounded %>
+    </div>
+    <% } %>

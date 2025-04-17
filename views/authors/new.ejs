@@ -1,6 +1,10 @@
-<h2>New Author</h2>
+<h2 class="h-author">New Author</h2>
 <form action="/authors" method="post">
-    <%- include('_form_fields') %>
+    <div class="d-flex">
+        <div class="search-author">
+            <%- include('_form_fields') %>
+        </div>
         <a href="/authors" class="cancel-btn">Cancel</a>
         <button type="submit" class="green-btn">Create</button>
+    </div>
 </form>

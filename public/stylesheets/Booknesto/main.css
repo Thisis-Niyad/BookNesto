@@ -36,6 +36,7 @@ button {
 }
 
 .del-btn {
+  margin: 5px;
   padding: 5px 10px;
   color: red;
   border: 2px solid red;
@@ -47,6 +48,7 @@ button {
 }
 
 .sub-btn {
+  margin: 5px;
   padding: 5px 10px;
   color: #fff;
   border: 2px solid #0d6efd;
@@ -59,6 +61,7 @@ button {
 }
 
 .green-btn {
+  margin: 5px;
   padding: 5px 10px;
   color: #fff;
   border: 2px solid #3dfd0d;
@@ -71,6 +74,7 @@ button {
 }
 
 .cancel-btn {
+  margin: 5px;
   padding: 5px 10px;
   color: #000000;
   border: 2px solid #acacac;
@@ -82,6 +86,7 @@ button {
 }
 
 .edit-btn {
+  margin: 5px;
   padding: 5px 10px;
   color: #fff;
   border: 2px solid #712cf9;
@@ -182,6 +187,12 @@ h2 {
   padding: 10px 20px;
 }
 
+.div-S-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+}
+
 .bookForm {
   display: flex;
   width: 1000px;
@@ -251,6 +262,10 @@ h2 {
   margin: 5px;
 }
 
+.h-author {
+  padding-left: 40px;
+}
+
 .search-author {
   padding: 0 5px;
   border: 1px solid #acacac;
@@ -260,7 +275,7 @@ h2 {
   align-items: center;
   justify-content: flex-start;
   font-size: 1.5rem;
-  margin: 10px;
+  margin: 10px 40px 15px;
   color: #000;
 }
 .search-author:focus-within {
@@ -277,4 +292,117 @@ h2 {
 }
 .search-author button svg {
   color: #757575;
+}
+
+.list-card {
+  width: 80%;
+  margin: auto;
+  box-shadow: 1px 1px 10px 0px #acacac;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.list-card li {
+  display: flex;
+  border-bottom: 1px solid #acacac;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+div .author-btns {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.notfound {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  box-shadow: 1px 1px 10px 0px #acacac;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #3d3d3d;
+}
+
+.star-rating {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 2rem;
+}
+
+.star-rating input[type=radio] {
+  display: none;
+}
+
+.star-rating label {
+  color: #b8b5b5;
+  cursor: pointer;
+}
+
+.star-rating input[type=radio]:checked ~ label {
+  color: gold;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: orange;
+}
+
+.bookShow {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  box-shadow: 1px 1px 10px 0px #acacac;
+  border-radius: 25px;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 25px;
+  justify-content: space-between;
+}
+.bookShow div.pic-sec {
+  background-color: #712cf9;
+  width: 350px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.div-pic {
+  padding: 15px 15px 5px;
+}
+
+.title-pic {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.show-rates {
+  color: gold;
+  font-weight: bold;
+}
+
+.rating-form {
+  text-align: center;
+  font-size: larger;
+  padding-bottom: 7px;
+}
+
+.detailsOfBook {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  font-family: system-ui;
+  font-size: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.all-btn {
+  display: flex;
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */

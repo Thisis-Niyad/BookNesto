@@ -1,63 +1,44 @@
-<h2>
-    <%= book.title %>
-</h2>
-<div>
-    <img src="<%= book.coverImagePath %>" height="150" width="100">
-</div>
-<div>
-    rating:★/<%= Math.round(book.rating*10)/10 %>
-</div>
-<form action="/books/rate-book/<%= book.id %>" method="POST">
-    <div class="star-rating">
-        <input type="radio" id="star5" name="rating" value="5" /><label for="star5">★</label>
-        <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
-        <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
-        <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
-        <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+<div class="bookShow">
+    <div class="pic-sec">
+        <div class="div-pic">
+            <img src="<%= book.coverImagePath %>">
+        </div>
+        <div class="title-pic">
+            <%= book.title %>
+        </div>
+        <div class="show-rates">
+            rating:★/<%= Math.round(book.rating*10)/10 %>
+        </div>
+        <form action="/books/rate-book/<%= book.id %>" class="rating-form" method="POST">
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" /><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+            </div>
+            <button class="sub-btn" type="submit">Submit</button>
+        </form>
     </div>
-    <button class="sub-btn" type="submit">Submit</button>
-</form>
 
-<style>
-    .star-rating {
-        direction: rtl;
-        unicode-bidi: bidi-override;
-        font-size: 2rem;
-    }
+    <div class="detailsOfBook">
 
-    .star-rating input[type="radio"] {
-        display: none;
-    }
-
-    .star-rating label {
-        color: #b8b5b5;
-        cursor: pointer;
-    }
-
-    .star-rating input[type="radio"]:checked~label {
-        color: gold;
-    }
-
-    .star-rating label:hover,
-    .star-rating label:hover~label {
-        color: orange;
-    }
-</style>
-
-<div>
-    <div>Author: <%= book.author.name %>
+        <div>
+            <div>Author: <%= book.author.name %>
+            </div>
+            <div>Publish Date : <%= book.publishDate.toDateString() %>
+            </div>
+            <div>Page Count : <%= book.pageCount %>
+            </div>
+            <div>Category :<%= book.category %>
+            </div>
+            <div>About This Book : <%= book.description %>
+            </div>
+        </div>
+        <div class="all-btn">
+            <a href="/books/<%= book.id %>/edit" class="edit-btn">Edit</a>
+            <%- include('../partials/deleteForm',{url:`/books/${book.id}`}) %>
+                <a href="/authors/<%= book.author.id %>" class="green-btn">Veiw Author</a>
+        </div>
     </div>
-    <div>Publish Date : <%= book.publishDate.toDateString() %>
-    </div>
-    <div>Page Count : <%= book.pageCount %>
-    </div>
-    <div>Category :<%= book.category %>
-    </div>
-    <div>Description : <%= book.description %>
-    </div>
-</div>
-<div>
-    <a href="/books/<%= book.id %>/edit" class="edit-btn">Edit</a>
-    <%- include('../partials/deleteForm',{url:`/books/${book.id}`}) %>
-        <a href="/authors/<%= book.author.id %>" class="green-btn">Veiw Author</a>
 </div>
