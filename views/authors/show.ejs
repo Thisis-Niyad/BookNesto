@@ -1,21 +1,26 @@
-<h2>
-    <%= author.name %>
-</h2>
-<a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
-<%- include('../partials/deleteForm',{url:`/authors/${author.id}`}) %>
-
-    <% if (booksByAuthor.length>0) { %>
-        <h2>Books By Author</h2>
-        <div>
-            <% booksByAuthor.forEach(book=> { %>
+<div class="author-veiw">
+    <h2>
+        <%= author.name %>
+    </h2>
+    <div class="d-flex">
+        <a href="/authors/<%= author.id %>/edit" class="edit-btn">Edit</a>
+        <%- include('../partials/deleteForm',{url:`/authors/${author.id}`}) %>
+    </div>
+</div>
+<% if (booksByAuthor.length>0) { %>
+    <h2>Books By Author</h2>
+    <div class="d-warp">
+        <% booksByAuthor.forEach(book=> { %>
+            <div>
                 <a href="/books/<%= book.id %>">
-                    <img src="<%= book.coverImagePath %>" height="150" width="100">
+                    <img src="<%= book.coverImagePath %>" class="img-slide">
                 </a>
-                <div>
-                    rating:★/<%= Math.round(book.rating*10)/10 %>
+                <div class="show-rates-blck">
+                    <%= Math.round(book.rating*10)/10 %> <span>★</span>
                 </div>
-                <% }); %>
-        </div>
-        <% } else { %>
+            </div>
+            <% }); %>
+    </div>
 
-            <% } %>
+    <% } %>
+        <script src="/javascripts/index.js"></script>

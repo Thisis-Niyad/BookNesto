@@ -4,7 +4,7 @@ a, li, ul, button {
   cursor: pointer;
 }
 
-body {
+.body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -76,13 +76,12 @@ button {
 .cancel-btn {
   margin: 5px;
   padding: 5px 10px;
-  color: #000000;
   border: 2px solid #acacac;
   border-radius: 8px;
 }
 .cancel-btn:hover {
   color: #fff;
-  background-color: #acacac;
+  background-color: #7e7b7b;
 }
 
 .edit-btn {
@@ -171,7 +170,8 @@ h2 {
   border-radius: 20px;
   font-size: larger;
   padding: 5px;
-  color: #777777;
+  background-color: transparent;
+  color: #7f7f7f;
 }
 .date-input input:focus {
   color: #383838;
@@ -197,10 +197,30 @@ h2 {
   display: flex;
   width: 1000px;
   margin: auto;
-  box-shadow: 1px 1px 10px 0px #acacac;
   border-radius: 25px;
   justify-content: flex-end;
   align-items: center;
+}
+
+.bookForm-light {
+  box-shadow: 1px 1px 10px 0px #acacac;
+}
+
+.bookForm-dark {
+  box-shadow: 1px 1px 10px 0px #000;
+}
+
+.txt-field-dark > div > input,
+.txt-field-dark > div > select,
+.txt-field-dark > div > textarea {
+  background-color: #3c3c3c;
+  color: #fff;
+}
+.txt-field-dark > div > input:focus,
+.txt-field-dark > div > select:focus,
+.txt-field-dark > div > textarea:focus {
+  background-color: #fcfcfc;
+  color: #000;
 }
 
 .txt-field {
@@ -212,11 +232,11 @@ h2 {
   padding: 5px 50px;
 }
 .txt-field div input, .txt-field div select {
+  font-weight: 600;
   border: 1px solid #606060;
   border-radius: 20px;
   font-size: larger;
   padding: 5px;
-  color: #000000;
 }
 .txt-field div label {
   padding-left: 15px;
@@ -234,8 +254,15 @@ h2 {
 }
 
 .filepond--panel-root {
-  background-color: #712cf9;
   border-radius: 25px;
+}
+
+.fbg-violet {
+  background-color: #712cf9;
+}
+
+.fbg-grey {
+  background-color: #3c3c3c;
 }
 
 .filepond--drop-label {
@@ -276,7 +303,6 @@ h2 {
   justify-content: flex-start;
   font-size: 1.5rem;
   margin: 10px 40px 15px;
-  color: #000;
 }
 .search-author:focus-within {
   border-color: #000;
@@ -297,7 +323,7 @@ h2 {
 .list-card {
   width: 80%;
   margin: auto;
-  box-shadow: 1px 1px 10px 0px #acacac;
+  box-shadow: 0px 0px 10px 0px #acacac;
   border-radius: 25px;
   overflow: hidden;
 }
@@ -306,7 +332,8 @@ h2 {
   border-bottom: 1px solid #acacac;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 20px 10px 15px;
+  font-weight: bold;
 }
 
 div .author-btns {
@@ -355,7 +382,7 @@ div .author-btns {
   display: flex;
   width: 1000px;
   margin: auto;
-  box-shadow: 1px 1px 10px 0px #acacac;
+  box-shadow: 1px 1px 10px 0px #000000;
   border-radius: 25px;
   flex-direction: row-reverse;
   align-items: center;
@@ -386,6 +413,11 @@ div .author-btns {
   font-weight: bold;
 }
 
+.show-rates-blck {
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
 .rating-form {
   text-align: center;
   font-size: larger;
@@ -405,4 +437,82 @@ div .author-btns {
 .all-btn {
   display: flex;
   padding: 10px;
+}
+
+.author-veiw {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  box-shadow: inset 0px 0px 10px 0px #000;
+  align-content: stretch;
+  justify-content: space-between;
+  padding: 5px 20px;
+  font-size: x-large;
+}
+.author-veiw h2 {
+  margin: 10px;
+}
+
+#switch {
+  width: 40px;
+  height: 21px;
+  margin: 10px 1px;
+  position: relative;
+  display: block;
+  background-color: #ebebeb;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+}
+#switch::after {
+  content: "";
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  background: rgb(255, 204, 137);
+  background: radial-gradient(circle, rgb(245, 175, 82) 12%, rgb(255, 153, 0) 100%);
+  transition: 0.3s;
+}
+
+.switchdiv {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#switchinput {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+#switchinput:checked + #switch {
+  background: #242424;
+}
+#switchinput:checked + #switch::after {
+  left: 21px;
+  background: radial-gradient(circle, #cecdcd 12%, #7c7c7c 100%);
+}
+
+.dark-mode {
+  background-color: #282828;
+  color: #fff;
+}
+
+.dark-nav {
+  background-color: #1f2020;
+}
+
+@media (prefers-color-scheme: dark) {
+  .system-mode {
+    background-color: #282828;
+    color: #fff;
+  }
+  .system-navbar {
+    background-color: #1f2020;
+  }
 }/*# sourceMappingURL=main.css.map */

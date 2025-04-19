@@ -2,10 +2,22 @@
     display: flex
     width: 1000px
     margin: auto
-    box-shadow: 1px 1px 10px 0px #acacac
     border-radius: 25px
     justify-content: flex-end
     align-items: center
+.bookForm-light
+    box-shadow: 1px 1px 10px 0px #acacac
+.bookForm-dark
+    box-shadow: 1px 1px 10px 0px #000
+.txt-field-dark > div > input,
+.txt-field-dark > div > select,
+.txt-field-dark > div > textarea
+    background-color: #3c3c3c
+    color: #fff
+    &:focus
+        background-color: #fcfcfc
+        color: #000
+
 .txt-field
     width: 100%
     div
@@ -13,11 +25,11 @@
         flex-direction: column
         padding: 5px 50px
         input,select
+            font-weight: 600
             border: 1px solid #606060
             border-radius: 20px
             font-size: larger
             padding: 5px
-            color: #000000
         label
             padding-left: 15px
             font-weight: bold
@@ -29,8 +41,11 @@
     width: 350px
     margin-bottom: 0
 .filepond--panel-root
-    background-color: #712cf9
     border-radius: 25px
+.fbg-violet
+    background-color: #712cf9
+.fbg-grey
+    background-color: #3c3c3c
 .filepond--drop-label
     color: #fff
     cursor: pointer

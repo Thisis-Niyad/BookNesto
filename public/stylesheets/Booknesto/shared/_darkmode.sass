@@ -1,0 +1,47 @@
+#switch
+    width: 40px
+    height: 21px
+    margin: 10px 1px
+    position: relative
+    display: block
+    background-color: #ebebeb
+    border-radius: 20px
+    transition: 0.3s
+    cursor: pointer
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4)
+    &::after
+        content: ""
+        border-radius: 50%
+        width: 16px
+        height: 16px
+        position: absolute
+        top: 2px
+        left: 3px
+        background: rgb(255,204,137)
+        background: radial-gradient(circle, rgb(245 175 82) 12%, rgb(255 153 0) 100%)
+        transition: 0.3s
+
+.switchdiv
+    display: flex
+    justify-content: flex-end
+    padding-right: 10px
+#switchinput
+    width: 0
+    height: 0
+    visibility: hidden
+    &:checked + #switch
+        background: #242424
+        &::after
+            left: 21px
+            background: radial-gradient(circle,#cecdcd 12%, #7c7c7c 100%)
+.dark-mode
+    background-color: #282828
+    color: #fff
+.dark-nav
+    background-color: #1f2020
+@media (prefers-color-scheme: dark)
+    .system-mode
+        background-color: #282828
+        color: #fff
+    .system-navbar
+        background-color: #1f2020

@@ -1,21 +1,26 @@
-<h2>Edit Author</h2>
-<form action="/authors/<%= author.id %>?_method=PUT" method="post">
-    <%- include('_form_fields') %>
+<h2 class="h-author">Edit Author</h2>
+<form class="d-flex" action="/authors/<%= author.id %>?_method=PUT" method="post">
+    <div class="search-author">
+        <%- include('_form_fields') %>
+    </div>
+    <div class="savebtn-div">
         <a href="/authors/<%= author.id %>" class="cancel-btn">Cancel</a>
         <button class="sub-btn" type="submit">Update</button>
+    </div>
 </form>
-<div>
+<h2 class="h-author">His Books</h2>
+
+<div class="d-warp">
     <% bookByAuthor.forEach(book=> { %>
         <div>
             <a href="/books/<%= book.id %>">
-                <img src="<%= book.coverImagePath %>" height="150" width="100">
+                <img src="<%= book.coverImagePath %>" class="img-slide">
             </a>
-            <div>
-                rating:★/<%= Math.round(book.rating*10)/10 %>
+            <div class="show-rates-blck">
+                <%= Math.round(book.rating*10)/10 %> <span>★</span>
             </div>
-
             <%- include('../partials/deleteForm',{url:`/authors/${book.id}/${author.id}`}) %>
         </div>
-
         <% }); %>
 </div>
+<script src="/javascripts/index.js"></script>

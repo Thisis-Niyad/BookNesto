@@ -16,10 +16,16 @@
     <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src="/javascripts/fileUpload.js"></script>
+    <script defer src="/javascripts/darkmode.js"></script>
+
 </head>
 
-<body>
+<body class="body system-mode">
     <%- include('../partials/header.ejs') %>
+        <div class="switchdiv">
+            <input type="checkbox" name="" id="switchinput">
+            <label id="switch" for="switchinput"></label>
+        </div>
         <%- include('../partials/errorMessage.ejs') %>
             <%- body %>
 

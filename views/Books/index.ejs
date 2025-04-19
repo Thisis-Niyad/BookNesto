@@ -31,9 +31,10 @@
             <a href="/books/<%= book.id %>">
                 <img src="<%= book.coverImagePath %>" class="img-slide">
             </a>
-            <div>
-                rating:★/<%= Math.round(book.rating*10)/10 %>
+            <div class="show-rates-blck">
+                <%= Math.round(book.rating*10)/10 %> <span>★</span>
             </div>
         </div>
         <% }); %>
 </div>
+<script src="/javascripts/index.js"></script>
