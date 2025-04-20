@@ -42,3 +42,14 @@ switchinput.addEventListener("change", function () {
 })
 document.querySelector('body').classList.remove('system-mode');
 document.querySelector('.navbar').classList.remove('system-navbar');
+
+function showsidebar() {
+    const sidebar = document.querySelector('.sideBar');
+    sidebar.style.display = 'flex';
+
+}
+function closesidebar() {
+    const sidebar = document.querySelector('.sideBar');
+    sidebar.style.display = 'none';
+
+}

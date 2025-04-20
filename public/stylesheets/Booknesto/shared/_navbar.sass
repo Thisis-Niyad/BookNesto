@@ -13,3 +13,34 @@
             font-size: 2.3rem
 .fs-3rem
     font-size: 3rem
+.sideBar
+    position: fixed
+    top: 0
+    right: 0
+    height: 100vh
+    width: 250px
+    z-index: 999
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1)
+    backdrop-filter: blur(10px)
+    display: none
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    padding: 0
+    li
+        width: 100%
+        &:not(:has(a))
+            padding: 10px
+            width: 100%
+        a
+            display: block
+            width: 100%
+            padding: 10px
+            font-size: 1.3rem
+
+@media (min-width:801px)
+    .menu
+        display: none
+@media ( max-width: 800px)
+    .hideon800
+        display: none
