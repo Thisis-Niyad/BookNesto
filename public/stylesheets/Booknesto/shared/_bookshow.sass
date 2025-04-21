@@ -48,7 +48,7 @@
     font-weight: bold
 .show-rates-blck
     font-weight: 600
-    color: #2d2d2d
+    color: #606060
 .rating-form
     text-align: center
     font-size: larger
@@ -65,6 +65,7 @@
 .all-btn
     display: flex
     padding: 10px
+    flex-wrap: wrap
 .author-veiw
     display: flex
     flex-wrap: wrap
@@ -77,3 +78,12 @@
     font-size: x-large
     h2
         margin: 10px
+
+@media  ( max-width: 1050px  )
+    .bookShow
+        width: 90%
+@media  ( max-width: 800px  )
+    .bookShow
+        flex-direction: column
+        width: min-content
+        padding: 10px

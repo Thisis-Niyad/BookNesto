@@ -168,11 +168,11 @@ h2 {
 
 @media (max-width: 420px) {
   .slider {
-    height: 250px;
+    height: 275px;
   }
   .img-slide {
-    width: 120px;
-    height: 190px;
+    width: 141px;
+    height: 227px;
   }
 }
 .txt-c {
@@ -205,6 +205,7 @@ h2 {
   display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .date-input {
@@ -212,7 +213,7 @@ h2 {
   flex-direction: column;
   font-size: larger;
   font-weight: 600;
-  width: 50%;
+  width: 40%;
   padding: 8px;
 }
 .date-input input {
@@ -243,9 +244,20 @@ h2 {
   font-size: 1.7rem;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .search-title {
     width: 80%;
+    font-size: 1rem;
+  }
+  .d-flex {
+    flex-direction: column;
+  }
+  .date-input {
+    font-size: large;
+    width: 70%;
+  }
+  .date-input input {
+    font-size: large;
   }
 }
 .bookForm {
@@ -287,7 +299,10 @@ h2 {
   flex-direction: column;
   padding: 5px 50px;
 }
-.txt-field div input, .txt-field div select {
+.txt-field div input[type=date],
+.txt-field div input[type=number],
+.txt-field div input[type=text],
+.txt-field div select {
   font-weight: 600;
   border: 1px solid #606060;
   border-radius: 20px;
@@ -301,6 +316,7 @@ h2 {
 }
 .txt-field div textarea {
   height: 100px;
+  border: 1px solid #606060;
 }
 
 .filepond--root {
@@ -338,6 +354,14 @@ h2 {
   text-align: center;
   padding: 7px;
   font-size: larger;
+}
+
+.savebtn-div1 {
+  text-align: center;
+  padding: 7px;
+  font-size: larger;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .h-addbook, .h-editbook {
@@ -429,6 +453,16 @@ div .author-btns {
   color: #3d3d3d;
 }
 
+@media (max-width: 500px) {
+  .search-author {
+    width: 80%;
+    justify-content: center;
+  }
+  .list-card li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .star-rating {
   direction: rtl;
   unicode-bidi: bidi-override;
@@ -497,7 +531,7 @@ div .author-btns {
 
 .show-rates-blck {
   font-weight: 600;
-  color: #2d2d2d;
+  color: #606060;
 }
 
 .rating-form {
@@ -519,6 +553,7 @@ div .author-btns {
 .all-btn {
   display: flex;
   padding: 10px;
+  flex-wrap: wrap;
 }
 
 .author-veiw {
@@ -536,6 +571,19 @@ div .author-btns {
   margin: 10px;
 }
 
+@media (max-width: 1050px) {
+  .bookShow {
+    width: 90%;
+  }
+}
+@media (max-width: 800px) {
+  .bookShow {
+    flex-direction: column;
+    width: -moz-min-content;
+    width: min-content;
+    padding: 10px;
+  }
+}
 #switch {
   width: 40px;
   height: 21px;
