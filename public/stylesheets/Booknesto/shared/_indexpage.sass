@@ -1,14 +1,15 @@
-.slider::-webkit-scrorllbar
-    width: 0
+.slider::-webkit-scrollbar
+    display: none
 
 .slider
     width: 100%
     height: 370px
-    overflow-x: hidden
+    overflow-x: auto
     display: flex
     align-items: center
     justify-content: flex-start
     align-items: center
+    -webkit-overflow-scrolling: touch
     .item
         padding: 10px 20px
         transition: 0.2s
@@ -21,7 +22,7 @@ h2
     margin-bottom: 2px
 @media  ( max-width:420px  )
     .slider
-        height: 275px
+        height: 300px
     .img-slide
         width: 141px
         height: 227px
