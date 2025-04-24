@@ -2,14 +2,11 @@ const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 const switchinput = document.getElementById("switchinput");
 
 if (mediaQuery.matches) {
-    console.log('🌙 Dark mode is enabled');
     switchinput.checked = true;
-    // localStorage.setItem('checkboxState', switchinput.checked);
     theme();
 } else {
     console.log('☀️ Light mode is enabled');
     switchinput.checked = false;
-    // localStorage.setItem('checkboxState', switchinput.checked);
     theme();
 }
 
