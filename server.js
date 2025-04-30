@@ -32,9 +32,9 @@ db.once('open', () => console.log('connected to mongoose'))
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
 app.use('/Books', BookRouter)
-// app.use((err, req, res, next) => {
-//     res.status(503).send("Our server is temporarily unavailable. Please try again in a moment!");
-// });
+app.use((err, req, res, next) => {
+    res.status(503).send("Our server is temporarily unavailable. Please try again in a moment!");
+});
 
 app.listen(process.env.PORT || 3000)
 
